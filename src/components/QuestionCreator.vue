@@ -39,7 +39,7 @@ function addQuestion() {
 
   const questionToAdd = {
     ...newQuestion.value,
-    // Для текстовых вопросов убираем options
+    // Убираем опцию у текстовых запросов
     ...(newQuestion.value.type === 'text' && { options: undefined }),
   }
 
@@ -59,7 +59,7 @@ function resetForm() {
 }
 
 function onTypeChange() {
-  // Очищаем placeholder при смене типа, если это не text
+  // Очистка placeholder при смене типа, если это не text
   if (newQuestion.value.type !== 'text') {
     newQuestion.value.placeholder = ''
   }

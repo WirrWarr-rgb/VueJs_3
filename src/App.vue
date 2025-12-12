@@ -87,7 +87,6 @@ onMounted(() => {
   const savedTheme = localStorage.getItem('darkMode')
   if (savedTheme) {
     isDarkMode.value = JSON.parse(savedTheme)
-    // Применяем тему сразу после загрузки
     if (isDarkMode.value) {
       document.documentElement.classList.add('dark')
     } else {
@@ -140,10 +139,8 @@ watch(isSurveyCompleted, (newValue) => {
               @complete="completeSurvey"
             />
 
-            <!-- Сообщение о завершении опроса -->
             <div v-else class="text-center py-8">
               <div class="mb-6">
-                <div class="text-6xl mb-4">🎉</div>
                 <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                   Поздравляем!
                 </h2>

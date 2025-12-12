@@ -48,7 +48,7 @@ function saveEdit() {
 
   const questionToUpdate = {
     ...editForm.value,
-    // Для текстовых вопросов убираем options
+    // Убираем опцию у текстовых запросов
     ...(editForm.value.type === 'text' && { options: undefined }),
   }
 
